@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "fir-api-rijksmuseum-ts",
+    "api-project": "fir-api-rijksmuseum-ts"
+  }
+}
