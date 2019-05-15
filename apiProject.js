@@ -29,7 +29,6 @@ subButton.addEventListener('click', fetchData);
 function fetchData(event) {
   event.preventDefault();
 
-  // url = `${baseURL}/?key=${key}&format=json`;
   url = 'https://www.rijksmuseum.nl/api/en/collection/?key=4Au0DeZs&format=json';
 
   fetch(url)
@@ -55,14 +54,25 @@ function fetchData(event) {
 function displayResults(myJson) {
   console.log("displayResults", myJson.artObjects);
   const artArray = myJson.artObjects;
-  var out = "";
+  
   for(i = 0; i < artArray.length; i++) {
     console.log(artArray[i].headerImage.url);
-      out += '<a href="' + artArray[i].headerImage.url + '">' + artArray[i].headerImage.url.display + '</a><br>';
+    var header = artArray[i].headerImage.url;
+    var x = document.createElement("IMG");  //create image element
+    x.src = header;
+    x.setAttribute("class", "box");  //give image a source (of header)              
+    var y = document.querySelector(".putStuffHere"); //select the outer box
+    y.appendChild(x);  //append the image to the div 
+
   }
-  document.getElementById("putStuffHere").innerHTML = out
-  displayResults(artArray)
 }
+
+// var out = "";
+//       out += '<a href="' + artArray[i].headerImage.url + '">' + artArray[i].headerImage.url.display + '</a><br>';
+//   }
+//   document.getElementById("putStuffHere").innerHTML = out
+//   displayResults(artArray)
+// }
 
 
 
