@@ -63,12 +63,13 @@ function displayResults(myJson) {
     x.setAttribute("class", "box");  //give image a source (of header)              
     var y = document.querySelector(".putStuffHere"); //select the outer box
     y.appendChild(x);  //append the image to the div 
-
+    // var z = document.querySelector("box");
+    // z.appendChild(`a href=` +)
   }
 }
 
-// var out = "";
-//       out += '<a href="' + artArray[i].headerImage.url + '">' + artArray[i].headerImage.url.display + '</a><br>';
+// var largeImg = "";
+//       out += '<a href="' + artArray[i].headerImage.url + '">' + artArray[i].headerImage.url.display + '</a>';
 //   }
 //   document.getElementById("putStuffHere").innerHTML = out
 //   displayResults(artArray)
